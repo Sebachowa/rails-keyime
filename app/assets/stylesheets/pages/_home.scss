@@ -2,3 +2,81 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+body, html, h1, h2, h3, h4, div, p, a, img {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#hero{
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%), image-url('banner.gif');
+  background-size: cover;
+  position: relative;
+  height: 580px;
+  background-color: #d8d8d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header{
+  width: 800px;
+  padding: 20px 0;
+  h1 {
+    font-size: 45px;
+    color: white;
+    margin-bottom: 70px;
+  }
+}
+
+#home-input {
+  border: 0;
+  outline: 0;
+  background-color: black;
+  opacity: 0.75;
+  border-radius: 5px;
+  height: 42px;
+  width: 450px;
+  color: white;
+}
+
+.btn-success {
+  transition: all 0.5s ease;
+  height: 42px;
+  width: 96px;
+  margin-left: 12px;
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: white;
+  border: 0;
+  color: #00cf6b;
+  font-size: 14px;
+}
+.btn-success:hover {
+  color: white;
+  background: #00cf6b;
+}
+
+.title {
+  margin-top: 120px;
+  h2 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 0.78;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+  h4 {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+}

@@ -7,12 +7,6 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Search form -->
-    <%= form_tag(skills_path, method: :get) do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag 'Save' %>
-    <% end %>
-
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 

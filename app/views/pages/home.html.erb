@@ -1,7 +1,7 @@
 <div id="hero">
   <div class="header text-center">
     <h1>LET'S CHANGE THE WORLD<br>ONE SKILL AT A TIME</h1>
-    <div class="searh-form">
+    <div class="search-form text-center">
       <%= form_tag(skills_path, method: :get, class: "form-inline") do %>
         <%= text_field_tag :search, nil, class: "form-control", id: "home-input" %>
         <%= submit_tag 'Search', class: "btn btn-success" %>

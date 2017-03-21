@@ -1,10 +1,17 @@
-<%= simple_form_for(@skill) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :name, placeholder: "Enter a name" %>
-  <%= f.input :price, placeholder: "Enter a price" %>
-  <%= f.input :location, placeholder: "Enter a location" %>
-  <%= f.input :category, collection: ["Music", "Design", "Coding", "Dance", "Cocking"] %>
-  <%= f.input :description, as: :text, placeholder: "Enter a description" %>
-  <%= f.input :photos, as: :attachinary %>
-  <%= f.submit %>
-<% end %>
+<div class="form-wrapper">
+  <div class="form-container">
+    <h3 class="text-center" style="margin: 20px 0">Share your skill</h3>
+    <%= simple_form_for(@skill) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, placeholder: "Enter a name", input_html: { class: "new-input" } %>
+      <%= f.input :price, placeholder: "Enter a price", input_html: { class: "new-input" } %>
+      <%= f.input :location, placeholder: "Enter a location", input_html: { class: "new-input" } %>
+      <%= f.input :category, collection: ["Design", "Marketing", "Writing", "Video", "Music", "Programming", "Tech" "Bussiness", "Lifestyle"], input_html: { class: "new-input" } %>
+      <%= f.input :description, as: :text, placeholder: "Enter a description", input_html: { class: "new-input" } %>
+      <%= f.input :photos, as: :attachinary, input_html: { class: "new-input" } %>
+      <div class="text-center" style="margin: 20px 0">
+        <%= f.submit class: "btn btn-success", style: "width: 120px" %>
+      </div>
+    <% end %>
+  </div>
+</div>

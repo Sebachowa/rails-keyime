@@ -9,6 +9,21 @@
  Skill.destroy_all
  skills_attributes = [
 
+
+100.times do
+  Skill.create(
+    title: Faker::Demographic.race,
+    content: Faker::ChuckNorris.fact
+      )
+end
+
+t.string   "name"
+    t.integer  "price"
+    t.string   "location"
+    t.string   "category"
+    t.text     "description"
+    t.integer  "user_id"
+
   {
   # photos: "https://unsphash.it/250/150",
   name: "I will finish your wordpress site",

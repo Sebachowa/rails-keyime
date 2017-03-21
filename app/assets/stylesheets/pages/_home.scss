@@ -10,6 +10,10 @@ body, html, h1, h2, h3, h4, div, p, a, img {
   font-family: 'Quicksand', sans-serif;
 }
 
+body, html {
+  height: 100%;
+}
+
 #hero{
   background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%), image-url('banner.gif');
   background-size: cover;

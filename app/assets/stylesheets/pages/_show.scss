@@ -1,0 +1,75 @@
+.show-container {
+  margin-top: 70px;
+  height: 100%;
+}
+
+.show-header {
+  height: 30%;
+  padding: 60px;
+}
+
+.show-profile-picture {
+  float: left;
+  width: 20%;
+
+}
+
+.show-title {
+  float: right;
+  width: 80%;
+  p{
+    margin-top: 20px;
+  }
+}
+
+.show-body {
+  height: 70%;
+  padding: 0px 60px 60px 60px;
+  display: flex;
+}
+
+.show-picture {
+  float: left;
+  width: 70%;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: scretch;
+  margin-right: 30px;
+  img {
+    width: 100%;
+  }
+}
+
+.show-info {
+  flex: 0 0 auto;
+  float: right;
+  width: 300px;
+  padding-top: 10px;
+  border-top: 3px solid #00CF6B;
+  h4 {
+    margin-top: 20px;
+  }
+  p {
+    margin-top: 5px;
+  }
+}
+
+.show-info-buttons{
+
+}
+
+.btn-book {
+  margin-top: 150px;
+  width: 100%;
+}
+
+.btn-contact {
+  margin-top: 10px;
+}
+
+.btn-share {
+  float: right;
+  margin-top: 10px;
+}
+

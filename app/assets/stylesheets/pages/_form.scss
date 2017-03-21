@@ -1,0 +1,15 @@
+.form-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.form-container {
+  margin-top: 120px;
+  width: 500px;
+  padding: 20px;
+  background-color: #d0d0d0;
+}
+.new-input {
+  border-radius: 5px;
+  height: 42px;
+}

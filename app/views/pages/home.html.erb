@@ -1,9 +1,61 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="hero">
+  <div class="header text-center">
+    <h1>LET'S CHANGE THE WORLD<br>ONE SKILL AT A TIME</h1>
+    <div class="searh-form">
+      <%= form_tag(skills_path, method: :get, class: "form-inline") do %>
+        <%= text_field_tag :search, nil, class: "form-control", id: "home-input" %>
+        <%= submit_tag 'Search', class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
+<div class="wrapper">
+  <div class="title text-center">
+    <h2>EXPLORE THE CATEGORIES</h2>
+    <h4>Get inspired by KEYIMen</h4>
+  </div>
+  <div class="cards">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-container">
+            <p>Graphic design</p>
+            <div class="card" style="background-image: url('<%= asset_path('graphic_design.jpg') %>');"></div>
+              <%= link_to "#", class: "card-link" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% if user_signed_in? %>
-<%= link_to "LOG-OUT", destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to "LOGIN", new_user_session_path %>
-<% end %>

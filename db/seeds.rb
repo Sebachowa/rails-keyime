@@ -5,3 +5,49 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ Skill.destroy_all
+ skills_attributes = [
+
+  {
+  # photos: "https://unsphash.it/250/150",
+  name: "I will finish your wordpress site",
+  price: 1000,
+  location: "Hanalulu",
+  category: "Coding",
+  description: "Set up your wordpress site in less then 24 hours"
+  },
+
+  {
+  # photos: "https://unsphash.it/250/150",
+  name: "I will sing you to sleep like a creep",
+  price: 5,
+  location: "Shanghai",
+  category: "Music",
+  description: "sing you to sleep like a total creep"
+  },
+
+  {
+  # photos: "https://unsphash.it/250/150",
+  name: "I will design your personal logo",
+  price: 30,
+  location: "New York",
+  category: "design",
+  description: "Design a logo for you own personal branding"
+  },
+
+    {
+  # photos: "https://unsphash.it/250/150",
+  name: "I will Dance till the break of down with you",
+  price: 30000,
+  location: "Tokyo",
+  category: "Dance",
+  description: "Anywhere in Tokyo, all night long"
+  }
+
+
+
+
+ ]
+
+skills_attributes.each { |params| Skill.create(params) }

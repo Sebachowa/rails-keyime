@@ -5,5 +5,6 @@
   <%= f.input :location, placeholder: "Enter a location" %>
   <%= f.input :category, collection: ["Music", "Design", "Coding", "Dance", "Cocking"] %>
   <%= f.input :description, as: :text, placeholder: "Enter a description" %>
+  <%= f.input :photos, as: :attachinary %>
   <%= f.submit %>
 <% end %>

@@ -13,7 +13,7 @@ class SkillsController < ApplicationController
   end
 
   def create
-    skill_params = params.require(:skill).permit(:name, :price, :location, :category, :description)
+    skill_params = params.require(:skill).permit(:name, :price, :location, :category, :description, photos: [])
     @skill = Skill.new(skill_params)
     @skill.user_id = current_user.id
     if @skill.save
@@ -28,7 +28,7 @@ class SkillsController < ApplicationController
   end
 
   def update
-    skill_params = params.require(:skill).permit(:name, :price, :location, :category, :description)
+    skill_params = params.require(:skill).permit(:name, :price, :location, :category, :description, photos: [])
     @skill = Skill.find(params[:id])
     @skill.update(skill_params)
     redirect_to skill_path(@skill)

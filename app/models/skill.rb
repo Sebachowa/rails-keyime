@@ -1,6 +1,7 @@
 class Skill < ApplicationRecord
   belongs_to :user
   has_many :reviews
+  has_attachments :photos, maximum: 2
   validates :name, presence: true
   validates :price, presence: true
   validates :location, presence: true

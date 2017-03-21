@@ -21,7 +21,8 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 129px;
+  height: 27px;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -50,19 +51,18 @@
 
 /* Navbar right button */
 .navbar-wagon-button {
+  width: 140px;
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
+  border-radius: 5px;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: #995FF5;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: #8C53E5;
 }
 
 /* Navbar search form */
@@ -128,4 +128,11 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.fa-input {
+  content: "\f002";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
 }

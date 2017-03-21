@@ -1,7 +1,14 @@
 class SkillsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @skills = Skill.all
+
+    if params[:search]
+      @skills = @skills.where(category: params[:search])
+    else
+      @skills = Skill.all
+    end
   end
 
   def show
@@ -38,5 +45,4 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:id])
     @skill.destroy
   end
-
 end

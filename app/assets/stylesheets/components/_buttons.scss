@@ -1,4 +1,7 @@
-#btn-signin {
+.btn {
+  font-weight: 500;
+}
+.btn-sign {
   color: white;
   background-color: #00cf6b;
   border: none;
@@ -8,6 +11,7 @@
   transition: all 0.8s ease;
   &:hover {
     background-color: #00BE62;
+    color: white;
   }
 }
 #fb-link {
@@ -19,5 +23,10 @@
   transition: all 0.8s ease;
   &:hover {
     background-color: #375AA7;
+    color: white;
   }
 }
+#btn-signup {
+  margin-top: 20px;
+}
+

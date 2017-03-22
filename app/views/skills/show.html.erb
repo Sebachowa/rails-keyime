@@ -5,8 +5,13 @@
       <p><%= @skill.description.capitalize %></p>
     </div>
     <div class="show-profile-picture text-center">
-      <%= image_tag current_user.facebook_picture_url, class: "avatar-huge" %>
-      <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+      <% if @skill.user.facebook_picture_url %>
+        <%= image_tag @skill.user.facebook_picture_url, class: "avatar-huge" %>
+        <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+      <% else %>
+        <%= image_tag "animation.jpg", class: "avatar-huge" %>
+        <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+      <% end %>
     </div>
   </div>
   <div class="show-body">

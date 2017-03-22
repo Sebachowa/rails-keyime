@@ -1,290 +1,132 @@
 <div class="index-wrapper">
   <div class="index-left-container">
-    <table>
-      <tbody>
-        <% @skills.each do |s| %>
-          <tr>
-            <td><%= s.name %></td>
-            <td><%= s.price %></td>
-            <td><%= s.location %></td>
-            <td><%= s.category %></td>
-            <td><%= s.description %></td>
-            <td><%= s.user_id %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-
-  <!-- MAP BELOW THIS LINE!!!!!!!! -->
-  <div class="index-right-container" >
-    <div id="map" style="width: 500px; height: 500px;">
-      <%= content_for(:after_js) do %>
-        <script type="text/javascript">
-            var style = [
-    {
-        "featureType": "all",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#f9f9f9"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#444444"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#f2f2f2"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "lightness": "-100"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 45
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#d4ebde"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "gamma": "3.10"
-            },
-            {
-                "weight": "0.01"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#2e2e2e"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "lightness": "-86"
-            },
-            {
-                "weight": "0.01"
-            },
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#504d4d"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#6b6f6a"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#757575"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#fafafa"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station.rail",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station.rail",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#24602e"
-            },
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#e0e0e0"
-            }
-        ]
-    }
-]
-            var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
-
-          handler.buildMap({ provider: { styles: style }, internal: { id: 'map' } }, function(){
-            markers = handler.addMarkers(<%= raw @coordinates.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-          });
-        </script>
-      <% end %>
+    <h4><%= @category %></h4>
+    <div class="">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <% @skills.each do |skill| %>
+              <div class="col-xs-12 col-sm-6 sol-md-4">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('fun.jpg');">
+                  <div class="card-category"><%= skill.price %></div>
+                  <div class="card-description">
+                    <h2><%= skill.name %></h2>
+                    <p><%= skill.description %></p>
+                  </div>
+                  <% if skill.user.facebook_picture_url %>
+                    <%= image_tag skill.user.facebook_picture_url, class: "card-user avatar" %>
+                  <% else %>
+                    <%= image_tag "animation.jpg", class: "card-user avatar" %>
+                  <% end %>
+                  <%= link_to "", skills_path(@skills), class: "card-link" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="index-right-container">
+            <div id="map" style="width: 100%; height: 100vh;">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- MAP BELOW THIS LINE!!!!!!!! -->
+  <div class="index-right-container" >
+    <div id="map" style="width: 100%; height: 100%;">
+      <%= content_for(:after_js) do %>
+        <script type="text/javascript">
+          var style = [
+            {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#444444"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    },
+                    {
+                        "lightness": 45
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#46bcec"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            }
+        ]
+          var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
+
+        handler.buildMap({ provider: { styles: style }, internal: { id: 'map' } }, function(){
+          markers = handler.addMarkers(<%= raw @coordinates.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      </script>
+    <% end %>
+  </div>
 </div>
+

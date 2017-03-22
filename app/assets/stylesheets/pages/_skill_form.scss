@@ -17,6 +17,21 @@
     margin-bottom: 14px;
   }
 }
+.form-links {
+  margin-top: 16px;
+}
+#text-signup {
+  font-weight: 500;
+  font-size: 13px;
+  float: right;
+  transition: all 0.5s ease;
+  p {
+    color: #4f5362;
+  }
+  &:hover, &:active {
+    color: #00cf6b;
+  }
+}
 .new-input {
   border-radius: 5px;
   height: 42px;
@@ -48,22 +63,6 @@ a {
     text-decoration: none;
   }
 }
-
-.form-links {
-  margin-top: 16px;
-}
-#text-signup {
-  font-weight: 500;
-  font-size: 13px;
-  float: right;
-  transition: all 0.5s ease;
-  p {
-    color: #4f5362;
-  }
-  &:hover, &:active {
-    color: #00cf6b;
-  }
-}
 #text-forgot {
   color: #a8acb9;
   font-weight: 500;
@@ -78,6 +77,20 @@ a {
   color: #a8acb9;
   font-weight: 500;
   font-family: 'Quicksand';
+}
+#text-signin {
+  color: #a8acb9;
+  font-weight: 500;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 0;
+  transition: all 0.5s ease;
+  &:hover, &:active {
+    color: #00cf6b;
+  }
 }
 hr {
   margin: 40px 0;

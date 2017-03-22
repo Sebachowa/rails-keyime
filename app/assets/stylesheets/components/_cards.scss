@@ -27,7 +27,9 @@
   background-size: cover !important;
   color: white;
   position: relative;
+  margin-bottom: 50px;
 }
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -39,12 +41,17 @@
   left: 10px;
   font-size: 10px;
   text-transform: uppercase;
+  color: white;
 }
 .card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
+  h2, p {
+    color: white;
+  }
 }
+
 .card-description h2 {
   font-size: 24px;
 }

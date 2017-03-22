@@ -9,10 +9,17 @@ class SkillsController < ApplicationController
     else
       @skills = Skill.all
     end
+
+    @coordinates = Gmaps4rails.build_markers(@skills.where.not(latitude: nil)) do |skill, marker|
+      marker.lat skill.latitude
+      marker.lng skill.longitude
+      marker.infowindow skill.name
+    end
   end
 
   def show
     @skill = Skill.find(params[:id])
+
   end
 
   def new

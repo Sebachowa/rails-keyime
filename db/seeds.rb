@@ -37,7 +37,7 @@ t.string   "name"
   # photos: "https://unsphash.it/250/150",
   name: "I will sing you to sleep like a creep",
   price: 5,
-  location: "Shanghai",
+  location: "3610 Merrick St. Houston, Texas, 77025",
   category: "Music",
   description: "sing you to sleep like a total creep"
   },
@@ -58,9 +58,24 @@ t.string   "name"
   location: "Tokyo",
   category: "Dance",
   description: "Anywhere in Tokyo, all night long"
+  },
+
+    {
+  # photos: "https://unsphash.it/250/150",
+  name: "I will Dance code you an amazing rails app in 2 hours",
+  price: 3000000,
+  location: "Juana manso 1152, ciudad autonoma de buenos aires, argentina",
+  category: "Coding",
+  description: "code you a bad ass website"
+  },
+     {
+  # photos: "https://unsphash.it/250/150",
+  name: "I will design 5 logos in 1 hours",
+  price: 50000,
+  location: "89 Taixing Road, JingAn, Shanghai",
+  category: "Design",
+  description: "I will make amazing logos. sit down and shut up"
   }
-
-
 
 
  ]

@@ -1,9 +1,28 @@
 <div class="navbar-wagon navbar-wagon-fixed">
+  <div class="branding"
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.svg" %>
-  <% end %>
-
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.svg" %>
+    <% end %>
+    <div class="navbar-wagon-item categories-dropdown">
+      <div class="dropdown">
+        <div class="dp-menu" data-toggle="dropdown">
+          <h4 class="dropdown-toggle" id="navbar-wagon-menu">Categories</h4>
+          <p>&#x25BC;</p>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to "All", skills_path %>
+          </li>
+          <% ["Design", "Marketing", "Writing", "Video", "Music", "Programming", "Tech", "Bussiness", "Lifestyle"].each do |category| %>
+            <li>
+              <%= link_to category, skills_path(search: category) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 

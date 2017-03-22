@@ -1,0 +1,133 @@
+// <----- General Container ----->
+.show-container {
+  margin-top: 70px;
+  height: 100%;
+  padding: 50px 50px 0px 100px;
+  background-color: #f9f9f9;
+}
+
+// <----- Inner Containers ----->
+.show-header {
+  height: 30%;
+}
+
+.show-body {
+  height: 70%;
+  display: flex;
+}
+
+// <----- Header Elements ------>
+.show-profile-picture {
+  float: right;
+  width: 35%;
+  flex: diplay;
+  justify-content: space-around;
+  align-items: center;
+  p  {
+    margin-top: 20px;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+}
+
+.show-title {
+  float: left;
+  width: 65%;
+  h1{
+    font-size: 36px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+  p{
+    margin-top: 20px;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+}
+
+// <----- Body Elements ------>
+.show-picture {
+  float: left;
+  width: 65%;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: scretch;
+  margin-right: 30px;
+  margin-bottom: 100px;
+  img {
+    width: 100%;
+  }
+}
+
+.show-info {
+  flex: 0 0 auto;
+  float: right;
+  width: 35%;
+  padding-top: 10px;
+  border-top: 3px solid #00CF6B;
+  h4 {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #00cf6b;
+  }
+  h6 {
+    margin-top: 60px;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.64;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #4f5362;
+  }
+}
+
+.marker {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.show-info-buttons {
+  margin-top: 100px;
+}
+
+.show-info-buttons-bottom {
+  margin: 10px;
+}
+
+.btn-book {
+  margin: 0;
+  width: 100%;
+}
+
+.btn-contact {
+  margin: 0;
+  float: left;
+}
+
+.btn-share {
+  margin: 0;
+  float: right;
+}
+

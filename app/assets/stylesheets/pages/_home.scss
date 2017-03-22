@@ -10,6 +10,10 @@ body, html, h1, h2, h3, h4, div, p, a, img {
   font-family: 'Quicksand', sans-serif;
 }
 
+body, html {
+  height: 100%;
+}
+
 #hero{
   background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%), image-url('banner.gif');
   background-size: cover;
@@ -22,7 +26,6 @@ body, html, h1, h2, h3, h4, div, p, a, img {
 }
 
 .header{
-  width: 800px;
   padding: 20px 0;
   h1 {
     font-size: 45px;
@@ -78,5 +81,47 @@ body, html, h1, h2, h3, h4, div, p, a, img {
     line-height: 1;
     letter-spacing: normal;
     color: #4a4a4a;
+  }
+}
+
+.separator {
+  margin-top: 120px;
+  height: 540px;
+  background-color: #ffc82c;
+  display: flex;
+  align-items: center;
+}
+
+.right-container {
+  float: right;
+  width: 100%;
+  h3 {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  p {
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  a {
+    margin-top: 66px;
+  }
+}
+
+.left-container {
+  float: left;
+  img {
+    margin-left: 0px;
+    width: 600px;
   }
 }

@@ -1,7 +1,7 @@
 <div id="hero">
   <div class="header text-center">
     <h1>LET'S CHANGE THE WORLD<br>ONE SKILL AT A TIME</h1>
-    <div class="searh-form">
+    <div class="search-form text-center">
       <%= form_tag(skills_path, method: :get, class: "form-inline") do %>
         <%= text_field_tag :search, nil, class: "form-control", id: "home-input" %>
         <%= submit_tag 'Search', class: "btn btn-success" %>
@@ -16,46 +16,71 @@
     <h4>Get inspired by KEYIMen</h4>
   </div>
   <div class="cards">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
+    <div class="container text-center">
+      <div class="row top-buffer">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
           <div class="card-container">
             <p>Graphic design</p>
-            <div class="card" style="background-image: url('<%= asset_path('graphic_design.jpg') %>');"></div>
-              <%= link_to "#", class: "card-link" %>
-            </div>
+            <%= image_tag("graphic_design.jpg") %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <div class="card-container">
+            <p>Digital Marketing</p>
+            <%= image_tag("digital marketing.jpg") %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <div class="card-container">
+            <p>Writing & Translation</p>
+            <%= image_tag("writing.jpeg") %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <div class="card-container">
+            <p>Video Animation</p>
+            <%= image_tag("animation.jpg") %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
+      </div>
+      <div class="row top-buffer">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <div class="card-container">
+            <p>Music & Video</p>
+            <%= image_tag("music.jpg") %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <div class="card-container">
+            <p>Programming & Tech</p>
+            <%= image_tag("coding.jpg") %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <div class="card-container">
+            <p>Bussiness</p>
+            <%= image_tag("bussiness.jpg") %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <div class="card-container">
+            <p>Fun & Lifestyle</p>
+            <%= image_tag("fun.jpg") %>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+<div class="separator">
+  <div class="left-container text-center hidden-xs">
+    <%= image_tag("illustration.svg") %>
+  </div>
+  <div class="right-container text-center">
+    <h3>JOIN US NOW</h3>
+    <p>Let's change the world one skill at a time</p>
+    <%= link_to t(".top_call_to_action", default: "Join Us"), new_user_session_path, class: "btn btn-success" %>
+  </div>
 </div>
+
 

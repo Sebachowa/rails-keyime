@@ -3,13 +3,12 @@ class SkillsController < ApplicationController
 
   def index
     @skills = Skill.all
-
-    if params[:search]
-      @skills = @skills.where(category: params[:search])
+    @category = params[:search]
+    if @category
+      @skills = @skills.where(category: @category)
     else
       @skills = Skill.all
     end
-
     @coordinates = Gmaps4rails.build_markers(@skills.where.not(latitude: nil)) do |skill, marker|
       marker.lat skill.latitude
       marker.lng skill.longitude

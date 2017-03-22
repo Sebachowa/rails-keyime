@@ -8,7 +8,8 @@ class Skill < ApplicationRecord
   validates :location, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :description, presence: true
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+
+   geocoded_by :location
+   after_validation(:geocode, { if: :location_changed? })
 
 end

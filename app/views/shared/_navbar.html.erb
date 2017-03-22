@@ -14,7 +14,7 @@
           <li>
             <%= link_to "All", skills_path %>
           </li>
-          <% ["Design", "Marketing", "Writing", "Video", "Music", "Programming", "Tech", "Bussiness", "Lifestyle"].each do |category| %>
+          <% Skill::CATEGORIES.each do |category| %>
             <li>
               <%= link_to category, skills_path(search: category) %>
             </li>

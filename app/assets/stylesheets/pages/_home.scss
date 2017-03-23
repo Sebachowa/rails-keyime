@@ -87,7 +87,7 @@ body, html {
 
 .separator {
   margin-top: 120px;
-  height: 540px;
+  height: 500px;
   background-color: #ffc82c;
   display: flex;
   align-items: center;
@@ -96,6 +96,7 @@ body, html {
 .right-container {
   float: right;
   width: 100%;
+  position: relative;
   h3 {
     font-size: 36px;
     font-weight: bold;
@@ -104,6 +105,9 @@ body, html {
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: -80px;
   }
   p {
     font-size: 22px;
@@ -113,6 +117,8 @@ body, html {
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
+    position: absolute;
+    margin-left: 90px;
   }
   a {
     margin-top: 66px;
@@ -126,4 +132,19 @@ body, html {
     width: 600px;
   }
 }
-
+#mc_embed_signup {
+  position: absolute;
+  margin-left: 90px;
+  margin-top: 50px;
+}
+#mce-EMAIL {
+  height: 42px;
+  width: 375px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-top: 30px;
+  p {
+    color: #4a4a4a;
+  }
+}

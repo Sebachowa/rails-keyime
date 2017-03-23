@@ -32,6 +32,20 @@
           <h4>$ <%= @skill.price %></h4>
           <h6>Location</h6>
           <p><%= image_tag "fill-1.svg", class: "marker" %><%= @skill.location %></p>
+          <p><%= image_tag "fill-1.svg", class: "marker" %><%= @skill.location %></p>
+          <%= simple_form_for([@skill, @booking]) do |f| %>
+            <%= f.error_notification %>
+
+            <%= f.input :start_time %>
+            <%= f.input :end_time %>
+
+            <%= f.button :submit %>
+          <% end %>
+            <div class="form-group">
+              <div class="input-group date">
+                <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+              </div>
+            </div>
           <div class="show-buttons">
             <%= link_to t(".top_call_to_action", default: "Book!"), new_user_session_path, class: "btn-book btn btn-success" %>
             <div class="show-small-buttons">

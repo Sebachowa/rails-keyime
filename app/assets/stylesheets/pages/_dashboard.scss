@@ -39,6 +39,17 @@
 .product-body {
   flex: 1 1 auto;
 }
+
+.product-status {
+  margin: 0px 30px 0px 30px;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  p {
+    color: white;
+    font-weight: 300;
+    font-size: 8px;
+  }
+}
 .product-body > h3 {
   font-weight: bold;
   font-size: 23px;

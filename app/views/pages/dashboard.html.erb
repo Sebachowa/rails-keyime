@@ -8,7 +8,6 @@
           <p><%= current_user.given_name.capitalize %> <%= current_user.family_name.capitalize %></p>
           <% else %>
           <%= image_tag "profile-big.svg", class: "avatar-huge" %>
-          <h4><%= current_user.given_name.capitalize %> <%= current_user.family_name.capitalize %></h4>
           <% end %>
           <p><%= current_user.email %></p>
           <%= link_to t(".top_call_to_action", default: "Edit profile"), edit_user_registration_path, class: "btn btn-profile" %>
@@ -51,7 +50,27 @@
                 </div>
               <% end %>
             </div>
-            <div role="tabpanel" class="tab-pane" id="bookings">BOOKINGS</div>
+            <div role="tabpanel" class="tab-pane" id="bookings">
+              <% current_user.bookings.each do |booking| %>
+                <div class="product">
+                  <% if booking.skill.photos.any? %>
+                    <%= cl_image_tag booking.skill.photos.first.path, class: "product-image hidden-xs" %>
+                  <% else %>
+                  <%= image_tag "img-placeholder.svg", class: "product-image hidden-xs" %>
+                  <% end %>
+                  <div class='product-body'>
+                    <h3><%= booking.skill.name %></h3>
+                    <p><%= booking.skill.description %></p>
+                  </div>
+                  <div class='product-price'>
+                    <p>$ <%= booking.skill.price %></p>
+                  </div>
+                  <div class='product-status badge-red'>
+                    <p><%= booking.status.capitalize %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
             <div role="tabpanel" class="tab-pane" id="notifications">NOTIFICACIONES</div>
           </div>
         </div>

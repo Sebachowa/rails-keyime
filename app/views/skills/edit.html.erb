@@ -1,9 +1,13 @@
-<%= simple_form_for(@skill) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :name, placeholder: "Enter a name" %>
-  <%= f.input :price, placeholder: "Enter a price" %>
-  <%= f.input :location, placeholder: "Enter a location" %>
-  <%= f.input :category, collection: ["Music", "Design", "Coding", "Dance", "Cocking"] %>
-  <%= f.input :description, as: :text, placeholder: "Enter a description" %>
-  <%= f.submit %>
-<% end %>
+<div class="form-wrapper">
+  <div class="form-container">
+    <%= simple_form_for(@skill) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :name, placeholder: "Enter a name" %>
+    <%= f.input :price, placeholder: "Enter a price" %>
+    <%= f.input :location, placeholder: "Enter a location" %>
+    <%= f.input :category, collection: ["Music", "Design", "Coding", "Dance", "Cocking"] %>
+    <%= f.input :description, as: :text, placeholder: "Enter a description" %>
+    <%= f.submit class: "btn", id: "btn-update-skill"%>
+    <% end %>
+  </div>
+</div>

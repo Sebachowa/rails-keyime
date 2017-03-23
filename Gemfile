@@ -21,7 +21,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'geocoder'
-
+gem "letter_opener", group: :development
 gem "coffee-rails"
 gem "gmaps4rails"
 

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :skills
   has_many :bookings
   has_many :reviews, through: :skills
+  validates :given_name, presence: true
+  validates :family_name, presence: true
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

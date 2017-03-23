@@ -16,33 +16,44 @@
       </div>
       <div class="col-xs-9">
         <div class="booking-displayer">
-          <% current_user.skills.each do |skill| %>
-            <div class="product">
-              <% if skill.photos.any? %>
-                <%= cl_image_tag skill.photos.first.path, class: "product-image hidden-xs" %>
-              <% else %>
-              <%= image_tag "img-placeholder.svg", class: "product-image hidden-xs" %>
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#skills" aria-controls="home" role="tab" data-toggle="tab">Skills</a></li>
+            <li role="presentation"><a href="#bookings" aria-controls="profile" role="tab" data-toggle="tab">Bookings</a></li>
+            <li role="presentation"><a href="#notifications" aria-controls="messages" role="tab" data-toggle="tab">Notifications</a></li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="skills">
+              <% current_user.skills.each do |skill| %>
+                <div class="product">
+                  <% if skill.photos.any? %>
+                    <%= cl_image_tag skill.photos.first.path, class: "product-image hidden-xs" %>
+                  <% else %>
+                  <%= image_tag "img-placeholder.svg", class: "product-image hidden-xs" %>
+                  <% end %>
+                  <div class='product-body'>
+                    <h3><%= skill.name %></h3>
+                    <p><%= skill.description %></p>
+                  </div>
+                  <div class='product-price'>
+                    <p>$ <%= skill.price %></p>
+                  </div>
+                  <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+                    <li><%= link_to skill_path(skill) do %>
+                          <i class="fa fa-eye"></i>
+                        <% end %></li>
+                    <li><%= link_to edit_skill_path(skill) do %>
+                          <i class="fa fa-pencil"></i>
+                        <% end %></li>
+                    <li><%= link_to skill_path(skill), method: :delete do %>
+                          <i class="fa fa-trash"></i>
+                        <% end %></li>
+                  </ul>
+                </div>
               <% end %>
-              <div class='product-body'>
-                <h3><%= skill.name %></h3>
-                <p><%= skill.description %></p>
-              </div>
-              <div class='product-price'>
-                <p>$ <%= skill.price %></p>
-              </div>
-              <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-                <li><%= link_to skill_path(skill) do %>
-                      <i class="fa fa-eye"></i>
-                    <% end %></li>
-                <li><%= link_to edit_skill_path(skill) do %>
-                      <i class="fa fa-pencil"></i>
-                    <% end %></li>
-                <li><%= link_to skill_path(skill), method: :delete do %>
-                      <i class="fa fa-trash"></i>
-                    <% end %></li>
-              </ul>
             </div>
-          <% end %>
+            <div role="tabpanel" class="tab-pane" id="bookings">BOOKINGS</div>
+            <div role="tabpanel" class="tab-pane" id="notifications">NOTIFICACIONES</div>
+          </div>
         </div>
       </div>
     </div>

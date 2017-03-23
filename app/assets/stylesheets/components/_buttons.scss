@@ -1,7 +1,7 @@
 .btn {
   font-weight: 500;
 }
-.btn-sign, #btn-create-skill, #btn-update-skill {
+.btn-sign, #btn-create-skill, #btn-update-skill, #btn-update, #btn-back {
   color: white;
   background-color: #00cf6b;
   border: none;
@@ -48,4 +48,13 @@
     color: white;
   }
 }
-
+#btn-update {
+  margin-top: 20px;
+}
+#btn-back {
+  background-color: #737789;
+  margin-top: 20px;
+  &:hover {
+    background-color: #4F5362;
+  }
+}

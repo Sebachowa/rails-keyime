@@ -1,76 +1,45 @@
-// <----- General Container ----->
-.show-container {
-  margin-top: 70px;
-  height: 100%;
-  padding: 50px 50px 0px 100px;
-  background-color: #f9f9f9;
-}
-
-// <----- Inner Containers ----->
-.show-header {
-  height: 30%;
-}
-
-.show-body {
-  height: 70%;
-  display: flex;
-}
-
-// <----- Header Elements ------>
-.show-profile-picture {
-  float: right;
-  width: 35%;
-  flex: diplay;
-  justify-content: space-around;
-  align-items: center;
-  p  {
-    margin-top: 20px;
-    line-height: 1.33;
-    letter-spacing: normal;
-    color: #4a4a4a;
-  }
-}
-
 .show-title {
-  float: left;
-  width: 65%;
-  h1{
-    font-size: 36px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
-    color: #4a4a4a;
-  }
-  p{
-    margin-top: 20px;
-    line-height: 1.33;
-    letter-spacing: normal;
-    color: #4a4a4a;
-  }
+  padding-top: 20px;
 }
 
-// <----- Body Elements ------>
-.show-picture {
-  float: left;
-  width: 65%;
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  align-items: scretch;
-  margin-right: 30px;
-  margin-bottom: 100px;
-  img {
-    width: 100%;
-  }
+.show-title p {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.88;
+  letter-spacing: normal;
+  color: #a8acb9;
 }
 
-.show-info {
-  flex: 0 0 auto;
-  float: right;
-  width: 35%;
-  padding-top: 10px;
+.show-title h1 {
+  font-size: 36px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.show-user p {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.show-carousel img {
+  width: 100%;
+  height: 100%;
+}
+
+.show-details {
   border-top: 3px solid #00CF6B;
   h4 {
     margin-top: 20px;
@@ -103,10 +72,33 @@
   }
 }
 
-.marker {
-  margin-left: 10px;
-  margin-right: 10px;
+.show-buttons {
+  margin-top: 130px;
 }
+
+.show-small-buttons {
+  margin-top: 20px;
+}
+
+.show-description {
+  background-color: white;
+}
+
+.show-map {
+  background-color: white;
+}
+
+#description-title {
+  border-bottom: 3px solid #00CF6B;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+#descreiption-text {
+  padding-top: 20px;
+}
+
+
 
 .show-info-buttons {
   margin-top: 100px;

@@ -50,5 +50,6 @@ class SkillsController < ApplicationController
   def destroy
     @skill = Skill.find(params[:id])
     @skill.destroy
+    redirect_to dashboard_path
   end
 end

@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <div id="profile-card" class="text-center">
+          <% if current_user.facebook_picture_url %>
+            <%= image_tag current_user.facebook_picture_url, class: "avatar-huge" %>
+            <p><%= current_user.given_name.capitalize %> <%= current_user.family_name.capitalize %></p>
+          <% else %>
+            <%= image_tag "animation.jpg", class: "avatar-huge" %>
+            <p><%= current_user.given_name.capitalize %> <%= current_user.family_name.capitalize %></p>
+          <% end %>
+          <p><%= current_user.email %></p>
+          <%= link_to t(".top_call_to_action", default: "Edit profile"), edit_user_registration_path, class: "btn btn-profile" %>
+        </div>
+      </div>
+      <div class="col-xs-9">
+        <div class="booking-displayer">
+          <% current_user.skills.each do |skill| %>
+            <div class="product">
+              <% if skill.photos.any? %>
+                <%= cl_image_tag skill.photos.first.path, width: 100, height: 80, class: "product-image hidden-xs" %>
+              <% else %>
+                <p class="product-image hidden-xs">Placeholder</p>
+              <% end %>
+              <div class='product-body'>
+                <h3><%= skill.name %></h3>
+                <p><%= skill.description %></p>
+              </div>
+              <div class='product-price'>
+                <p>$ <%= skill.price %></p>
+              </div>
+              <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+                <li><%= link_to skill_path(skill) do %>
+                      <i class="fa fa-eye"></i>
+                    <% end %></li>
+                <li><%= link_to edit_skill_path(skill) do %>
+                      <i class="fa fa-pencil"></i>
+                    <% end %></li>
+                <li><%= link_to skill_path(skill), method: :delete do %>
+                      <i class="fa fa-trash"></i>
+                    <% end %></li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

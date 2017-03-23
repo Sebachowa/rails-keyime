@@ -6,18 +6,18 @@
     </div>
     <div class="show-profile-picture text-center">
       <% if @skill.user.facebook_picture_url %>
-        <%= image_tag @skill.user.facebook_picture_url, class: "avatar-huge" %>
-        <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+      <%= image_tag @skill.user.facebook_picture_url, class: "avatar-huge" %>
+      <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
       <% else %>
-        <%= image_tag "animation.jpg", class: "avatar-huge" %>
-        <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+      <%= image_tag "profile.svg", class: "avatar-huge" %>
+      <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
       <% end %>
     </div>
   </div>
   <div class="show-body">
     <div class="show-picture">
       <% @skill.photos.each do |photo| %>
-        <%= cl_image_tag photo.path, width: 750, height: 450, crop: :fill %>
+      <%= cl_image_tag photo.path, width: 750, height: 450, crop: :fill %>
       <% end %>
     </div>
     <div class="show-info">

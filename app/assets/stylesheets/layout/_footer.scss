@@ -1,1 +1,39 @@
 // Your footer style
+#footer {
+  background: #141414;
+  padding: 15px 0;
+  color: #CCCCCC;
+  margin-top: 100px;
+  margin-bottom: 0;
+  transition: all 0.8s ease;
+  p {
+    margin-top: 17px;
+  }
+  ul {
+    margin-top: 10px;
+  }
+  a {
+    color: #CCCCCC;
+    font-size: 18px;
+    letter-spacing: 20px;
+    transition: color 0.5s ease;
+  }
+  a:hover{
+    color: $yellow;
+  }
+}
+
+#wechat-qrocde a {
+  position: relative;
+  img {
+    display: none;
+    position: absolute;
+    width: 120px;
+    bottom: 40px;
+  }
+  &:hover img {
+    display: block;
+    text-align: center;
+  }
+}
+

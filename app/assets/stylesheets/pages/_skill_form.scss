@@ -106,3 +106,15 @@ hr {
     }
   }
 }
+.attachinary_container li {
+  list-style: none;
+  margin-left: -30px;
+  a {
+    color: #A8ACB9;
+    padding-left: 12px;
+    transition: all 0.6s ease;
+    &:hover {
+      color: #EB481F;
+    }
+  }
+}

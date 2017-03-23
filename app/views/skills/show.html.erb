@@ -1,55 +1,349 @@
-<div class="show-container">
-  <div class="show-header">
-    <div class="show-title">
-      <h1><%= @skill.name.capitalize %></h1>
-      <p><%= @skill.description.capitalize %></p>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="show-title">
+          <h1><%= @skill.name.capitalize %></h1>
+          <p>Posted time: <%= @skill.created_at %></p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="show-user text-center">
+          <% if @skill.user.facebook_picture_url %>
+            <%= image_tag @skill.user.facebook_picture_url, class: "avatar-huge" %>
+            <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+          <% else %>
+            <%= image_tag "profile.svg", class: "avatar-huge" %>
+            <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="show-profile-picture text-center">
-      <% if @skill.user.facebook_picture_url %>
-        <%= image_tag @skill.user.facebook_picture_url, class: "avatar-huge" %>
-        <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
-      <% else %>
-        <%= image_tag "animation.jpg", class: "avatar-huge" %>
-        <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
-      <% end %>
-    </div>
-  </div>
-  <div class="show-body">
-    <div class="show-picture">
-      <% @skill.photos.each do |photo| %>
-        <%= cl_image_tag photo.path, width: 750, height: 450, crop: :fill %>
-      <% end %>
-    </div>
-    <div class="show-info">
-      <h4>$ <%= @skill.price %></h4>
-      <h6>Location</h6>
-      <p><%= image_tag "fill-1.svg", class: "marker" %><%= @skill.location %></p>
-        <%= simple_form_for([@skill, @booking]) do |f| %>
-          <%= f.error_notification %>
+    <div class="row top-buffer">
+      <div class="col-xs-8">
+        <div class="show-carousel">
+          <% @skill.photos.each do |photo| %>
+            <%= cl_image_tag photo.path, width: 750, height: 400, crop: :fill %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="show-details">
+          <h4>$ <%= @skill.price %></h4>
+          <h6>Location</h6>
+          <p><%= image_tag "fill-1.svg", class: "marker" %><%= @skill.location %></p>
+          <p><%= image_tag "fill-1.svg", class: "marker" %><%= @skill.location %></p>
+          <%= simple_form_for([@skill, @booking]) do |f| %>
+            <%= f.error_notification %>
 
-          <%= f.input :start_time %>
-          <%= f.input :end_time %>
+            <%= f.input :start_time %>
+            <%= f.input :end_time %>
 
-          <%= f.button :submit %>
-        <% end %>
+            <%= f.button :submit %>
+          <% end %>
             <div class="form-group">
               <div class="input-group date">
                 <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
               </div>
             </div>
-        </div>
-      <div class="show-info-buttons">
-        <%= link_to t(".top_call_to_action", default: "Book!"), new_user_session_path, class: "btn-book btn btn-success" %>
-        <div class="show-info-buttons-bottom">
-          <%= link_to t(".top_call_to_action", default: "Contact"), new_user_session_path, class: "btn-contact btn btn-success" %>
-          <%= link_to t(".top_call_to_action", default: "Share"), new_user_session_path, class: "btn-share btn btn-success" %>
+          <div class="show-buttons">
+            <%= link_to t(".top_call_to_action", default: "Book!"), new_user_session_path, class: "btn-book btn btn-success" %>
+            <div class="show-small-buttons">
+              <%= link_to t(".top_call_to_action", default: "Contact"), new_user_session_path, class: "btn-contact btn btn-success" %>
+              <%= link_to t(".top_call_to_action", default: "Share"), new_user_session_path, class: "btn-share btn btn-success" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="wrapper" style="background-color: white">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="show-description">
+          <div id="description-title">
+            <h2>Description</h2>
+          </div>
+          <div id="descreiption-text">
+            <p><%= @skill.description.capitalize %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="show-map">
+          <div id="map" style="width: 100%; height: 60vh;">
+            <%= content_for(:after_js) do %>
+              <script type="text/javascript">
+                var style = [
+          {
+              "featureType": "all",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "color": "#f9f9f9"
+                  }
+              ]
+          },
+          {
+              "featureType": "all",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#ffffff"
+                  }
+              ]
+          },
+          {
+              "featureType": "administrative",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "color": "#444444"
+                  }
+              ]
+          },
+          {
+              "featureType": "administrative.locality",
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                  {
+                      "color": "#ffffff"
+                  }
+              ]
+          },
+          {
+              "featureType": "landscape",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "color": "#f2f2f2"
+                  }
+              ]
+          },
+          {
+              "featureType": "poi",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "visibility": "off"
+                  }
+              ]
+          },
+          {
+              "featureType": "poi.business",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "lightness": "-100"
+                  }
+              ]
+          },
+          {
+              "featureType": "road",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "saturation": -100
+                  },
+                  {
+                      "lightness": 45
+                  }
+              ]
+          },
+          {
+              "featureType": "road",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#d4ebde"
+                  }
+              ]
+          },
+          {
+              "featureType": "road",
+              "elementType": "geometry.stroke",
+              "stylers": [
+                  {
+                      "gamma": "3.10"
+                  },
+                  {
+                      "weight": "0.01"
+                  }
+              ]
+          },
+          {
+              "featureType": "road",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "visibility": "on"
+                  },
+                  {
+                      "color": "#2e2e2e"
+                  }
+              ]
+          },
+          {
+              "featureType": "road",
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                  {
+                      "lightness": "-86"
+                  },
+                  {
+                      "weight": "0.01"
+                  },
+                  {
+                      "visibility": "simplified"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.highway",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "visibility": "simplified"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.highway",
+              "elementType": "labels",
+              "stylers": [
+                  {
+                      "visibility": "off"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.highway",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "color": "#504d4d"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.arterial",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "color": "#6b6f6a"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.arterial",
+              "elementType": "labels.icon",
+              "stylers": [
+                  {
+                      "visibility": "off"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.local",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "color": "#757575"
+                  }
+              ]
+          },
+          {
+              "featureType": "transit",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "visibility": "off"
+                  }
+              ]
+          },
+          {
+              "featureType": "transit",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#fafafa"
+                  }
+              ]
+          },
+          {
+              "featureType": "transit",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "color": "#ffffff"
+                  }
+              ]
+          },
+          {
+              "featureType": "transit.line",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#ffffff"
+                  }
+              ]
+          },
+          {
+              "featureType": "transit.station.rail",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#ff0000"
+                  }
+              ]
+          },
+          {
+              "featureType": "transit.station.rail",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "color": "#ff0000"
+                  }
+              ]
+          },
+          {
+              "featureType": "water",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "color": "#24602e"
+                  },
+                  {
+                      "visibility": "on"
+                  }
+              ]
+          },
+          {
+              "featureType": "water",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#e0e0e0"
+                  }
+              ]
+          }
+      ]
 
 
+                var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
 
-
-
+                handler.buildMap({ provider: { styles: style }, internal: { id: 'map' } }, function(){
+                  markers = handler.addMarkers(<%= raw @coordinates.to_json %>);
+                  handler.bounds.extendWith(markers);
+                  handler.fitMapToBounds();
+                });
+              </script>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

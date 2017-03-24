@@ -9,9 +9,9 @@ class BookingsController < ApplicationController
     @booking.skill_id = skill.id
 
     if @booking.save
-      redirect_to :back
+      redirect_to dashboard_path
     else
-      # ...
+      render skills_path
     end
   end
 

@@ -30,7 +30,7 @@
                   <% end %>
                   <div class='product-body'>
                     <h3><%= skill.name %></h3>
-                    <p><%= skill.description %></p>
+                    <p><%= skill.description.slice(0..23).concat('...') %></p>
                   </div>
                   <div class='product-price'>
                     <p><strong>Price:</strong> $ <%= skill.price %></p>

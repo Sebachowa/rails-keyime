@@ -8,6 +8,7 @@
           <p><%= current_user.given_name %> <%= current_user.family_name %></p>
           <% else %>
           <%= image_tag "profile-big.svg", class: "avatar-huge" %>
+          <p><%= current_user.given_name %> <%= current_user.family_name %></p>
           <% end %>
           <%= link_to t(".top_call_to_action", default: "Edit profile"), edit_user_registration_path, class: "btn btn-profile" %>
         </div>

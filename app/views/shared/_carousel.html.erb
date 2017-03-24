@@ -1,0 +1,51 @@
+
+<!-- Top part of the slider -->
+<div class="col-xs-8" id="carousel-bounding-box">
+  <div class="carousel slide" id="myCarousel">
+    <!-- Carousel items -->
+    <div class="show-carousel carousel-inner">
+      <% if @skill.photos.any? %>
+      <% @skill.photos.each_with_index do |photo, index| %>
+      <div class="item <%= index == 0 ? 'active' : '' %>">
+        <div class="big-image-wrapper">
+        <div class="big-image" style="background-image: url(<%= cl_image_path photo.path, crop: :fill %>)">
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% else %>
+      <%= image_tag "img-placeholder.svg", class: "product-image hidden-xs" %>
+      <% end %>
+    </div><!-- Carousel nav -->
+    <%= link_to "#myCarousel", class:"carousel-control left", "data-slide" => "prev" do %>
+      <i class="fa fa-arrow-left"></i>
+    <% end %>
+
+    <%= link_to "#myCarousel", class:"carousel-control right", "data-slide" => "next" do %>
+      <i class="fa fa-arrow-right"></i>
+    <% end %>
+  </div>
+
+
+
+  <div class="hidden-phone" id="slider-thumbs">
+    <div class="span12">
+      <!-- Bottom switcher of slider -->
+      <ul class="thumbnails list-inline">
+        <% if @skill.photos.any? %>
+          <% @skill.photos.each_with_index do |photo, index| %>
+            <li class="span2">
+              <a class="thumbnail" id="carousel-selector-<%= index %>">
+                <%= cl_image_tag photo.path, class: "thumbnail", id: "carousel-selector-0" %>
+              </a>
+            </li>
+          <% end %>
+        <% else %>
+          <%= image_tag "img-placeholder.svg", class:"thumbnail", id: "carousel-selector-0" %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--/Slider-->
+

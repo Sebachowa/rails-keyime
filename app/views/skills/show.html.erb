@@ -31,7 +31,7 @@
         <div class="show-details">
           <h4>$ <%= @skill.price %></h4>
           <h6>Location</h6>
-          <p><%= image_tag "fill-1.svg", class: "marker" %><%= @skill.location %></p>
+          <p><%= image_tag "fill-1.svg", class: "marker" %> <%= @skill.location %></p>
           <%= simple_form_for([@skill, @booking]) do |f| %>
             <%= f.error_notification %>
             <%= f.input :start_time, as: :date_time_picker %>

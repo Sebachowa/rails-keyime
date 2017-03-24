@@ -25,8 +25,8 @@
 
 .show-user p {
   margin-top: 20px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   font-style: normal;
   font-stretch: normal;
   line-height: 1;
@@ -124,3 +124,13 @@
   float: right;
 }
 
+.new_booking {
+  margin-top: 25px;
+}
+
+.show-details {
+  h6 {
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+}

@@ -26,6 +26,9 @@ class User < ApplicationRecord
     user_params[:token] = auth.credentials.token
     user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
     user_params = user_params.to_h
+    if user_params[:email].empty?
+      user_params[:email] = "#{Devise.friendly_token[0,20]}-#{auth.uid}@fakebook.com"
+    end
 
     user = User.where(provider: auth.provider, uid: auth.uid).first
     user ||= User.where(email: auth.info.email).first # User did a regular sign up in the past.

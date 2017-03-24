@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking.skill_id = skill.id
 
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path(current_tab: "bookings")
     else
       render skills_path
     end
@@ -22,16 +22,8 @@ class BookingsController < ApplicationController
   def update
     booking_params = params.require(:booking).permit(:start_time, :end_time, :status)
     @booking = Booking.find(params[:id])
-    if @booking.update(booking_params)
-      respond_to do |format|
-        format.html { redirect_to dashboard_path }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.js  # <-- idem
-      end
-    end
+    @booking.update(booking_params)
+    redirect_to dashboard_path(current_tab: "requests")
   end
 
   def destroy

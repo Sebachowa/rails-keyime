@@ -167,3 +167,11 @@
     color: #ffffff;
     border: 0;
 }
+.nav-tabs {
+  a {
+    transition: all 0.4s ease;
+    &:hover {
+      color: #00cf6b;
+    }
+  }
+}

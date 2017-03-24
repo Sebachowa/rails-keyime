@@ -44,7 +44,7 @@ class User < ApplicationRecord
     return user
   end
   # this sends welcome spam
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
   private
 
   def send_welcome_email

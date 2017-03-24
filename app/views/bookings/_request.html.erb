@@ -1,0 +1,32 @@
+<div class="product">
+  <% if booking.skill.photos.any? %>
+    <%= cl_image_tag booking.skill.photos.first.path, class: "product-image hidden-xs hidden-sm hidden-md" %>
+  <% else %>
+  <%= image_tag "img-placeholder.svg", class: "product-image hidden-xs hidden-sm hidden-md" %>
+  <% end %>
+  <div class='product-body'>
+    <h3><%= booking.skill.name %></h3>
+    <p><%= booking.skill.description %></p>
+  </div>
+  <div class='product-time'>
+    <p><strong>FROM:</strong> <%= booking.start_time.strftime("%m/%d/%Y - %I:%M%p") %></p>
+    <p><strong>TO:</strong> <%= booking.end_time.strftime("%m/%d/%Y - %I:%M%p") %></p>
+  </div>
+  <div class='product-status product-status-flex text-center'>
+    <% if booking.status == "rejected" || booking.status == "accepted" %>
+      <div class='product-status text-center <%= badge_class(booking) %>'>
+        <p><%= booking.status.capitalize %></p>
+      </div>
+    <% end %>
+    <% if booking.status == "pending" %>
+      <%= simple_form_for([booking.skill, booking]) do |f| %>
+        <%= f.input :status, :as => :hidden, :input_html => { :value => "accepted" } %>
+        <%= f.submit :accept, id: "toggle-button-accept" %>
+      <% end %>
+      <%= simple_form_for([booking.skill, booking]) do |f| %>
+        <%= f.input :status, :as => :hidden, :input_html => { :value => "rejected" } %>
+        <%= f.submit :reject, id: "toggle-button-reject" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

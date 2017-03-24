@@ -11,10 +11,10 @@
         <div class="show-user text-center">
           <% if @skill.user.facebook_picture_url %>
           <%= image_tag @skill.user.facebook_picture_url, class: "avatar-huge" %>
-          <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+          <p><%= @skill.user.given_name %> <%= @skill.user.family_name %></p>
           <% else %>
           <%= image_tag "profile.svg", class: "avatar-huge" %>
-          <p><%= @skill.user.given_name.capitalize %> <%= @skill.user.family_name.capitalize %></p>
+          <p><%= @skill.user.given_name %> <%= @skill.user.family_name %></p>
           <% end %>
         </div>
       </div>

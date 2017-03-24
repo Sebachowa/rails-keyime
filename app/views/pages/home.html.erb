@@ -121,6 +121,36 @@
     <!--End mc_embed_signup-->
   </div>
 </div>
+
+<div class="recommended-block">
+  <div class="title text-center">
+    <h2>STAFF PICKED</h2>
+    <h4>Skills we recommend to you</h4>
+  </div>
+  <div class="container cards-show">
+    <div class="row">
+        <% @skills.limit(12).each do |skill| %>
+          <div class="col-xs-3">
+
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= skill.photos.any? ? cl_image_path(skill.photos.first.path, width: 750, height: 450, crop: :fill) : ''%>);">
+              <div class="card-category"><strong>$ <%= skill.price %></strong></div>
+              <div class="card-description">
+                <h2><%= skill.name %></h2>
+                <p><%= skill.description.slice(0..23).concat('...') %></p>
+              </div>
+              <% if skill.user.facebook_picture_url %>
+              <%= image_tag skill.user.facebook_picture_url, class: "card-user avatar" %>
+              <% else %>
+              <%= image_tag "profile.png", class: "card-user avatar" %>
+              <% end %>
+              <%= link_to "", skill_path(skill), class: "card-link" %>
+            </div>
+          </div>
+
+        <% end %>
+    </div>
+  </div>
+</div>
 <%= render "shared/footer" %>
 
 

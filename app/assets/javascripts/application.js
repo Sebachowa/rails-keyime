@@ -4,8 +4,12 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require_tree .
 //= require underscore
 //= require gmaps/google
 //= require bootstrap-datepicker
-
+//= require moment
+//= require bootstrap-datetimepicker
+//= require_tree .
+$(function () {
+    $('.form_datetime').datetimepicker({ format: 'YYYY-MM-DD HH:mm' });
+});

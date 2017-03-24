@@ -10,7 +10,7 @@
                 <div class="card-category"><strong>$ <%= skill.price %></strong></div>
                 <div class="card-description">
                   <h2><%= skill.name %></h2>
-                  <p><%= skill.description %></p>
+                  <p><%= skill.description.slice(0..23).concat('...') %></p>
                 </div>
                 <% if skill.user.facebook_picture_url %>
                   <%= image_tag skill.user.facebook_picture_url, class: "card-user avatar" %>

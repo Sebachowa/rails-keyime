@@ -2,14 +2,12 @@ class SkillsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @skills = Skill.all
+    @skills = Skill.all.where.not(latitude: nil)
     @category = params[:search]
     if @category
       @skills = @skills.where(category: @category)
-    else
-      @skills = Skill.all
     end
-    @coordinates = Gmaps4rails.build_markers(@skills.where.not(latitude: nil)) do |skill, marker|
+    @coordinates = Gmaps4rails.build_markers(@skills) do |skill, marker|
       marker.lat skill.latitude
       marker.lng skill.longitude
       marker.infowindow skill.name
@@ -19,6 +17,14 @@ class SkillsController < ApplicationController
   def show
     @skill = Skill.find(params[:id])
     @booking = Booking.new
+    #   @coordinates = Gmaps4rails.build_markers(@skill.where.not(latitude: nil)) do |skill, marker|
+
+    #   marker.lat skill.latitude
+    #   marker.lng skill.longitude
+    #   marker.infowindow skill.name
+    # end
+
+    @coordinates = [{ lat: @skill.latitude, lng: @skill.longitude }]
   end
 
   def new

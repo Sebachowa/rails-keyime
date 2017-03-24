@@ -1,11 +1,11 @@
-<div class="wrapper">
+<div class="wrapper-grey">
   <div class="container">
     <div class="row">
       <div class="col-xs-3">
         <div id="profile-card" class="text-center">
           <% if current_user.facebook_picture_url %>
           <%= image_tag current_user.facebook_picture_url, class: "avatar-huge" %>
-          <p><%= current_user.given_name.capitalize %> <%= current_user.family_name.capitalize %></p>
+          <p><%= current_user.given_name %> <%= current_user.family_name %></p>
           <% else %>
           <%= image_tag "profile-big.svg", class: "avatar-huge" %>
           <% end %>

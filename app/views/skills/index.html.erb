@@ -15,7 +15,7 @@
                 <% if skill.user.facebook_picture_url %>
                   <%= image_tag skill.user.facebook_picture_url, class: "card-user avatar" %>
                 <% else %>
-                  <%= image_tag "animation.jpg", class: "card-user avatar" %>
+                  <%= image_tag "profile.png", class: "card-user avatar" %>
                 <% end %>
                 <%= link_to "", skill_path(skill), class: "card-link" %>
               </div>

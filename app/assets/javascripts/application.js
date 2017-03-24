@@ -6,10 +6,10 @@
 //= require attachinary
 //= require underscore
 //= require gmaps/google
+//= require bootstrap-datepicker
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
-
 $(function () {
     $('.form_datetime').datetimepicker({ format: 'YYYY-MM-DD HH:mm' });
 });

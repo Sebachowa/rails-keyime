@@ -22,7 +22,6 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'geocoder'
 gem "letter_opener", group: :development
-gem "coffee-rails"
 gem "gmaps4rails"
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'

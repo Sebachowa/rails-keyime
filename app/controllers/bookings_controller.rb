@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     @booking.user_id = current_user.id
     @booking.skill_id = skill.id
-
     if @booking.save
       redirect_to dashboard_path(current_tab: "bookings")
     else

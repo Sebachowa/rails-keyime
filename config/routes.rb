@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   root to:'pages#home'
   resources :skills do
-    resources :bookings
+    # resources :bookings
+    get 'bookings/:whatever', to: 'bookings#show'
   end
 end
 
